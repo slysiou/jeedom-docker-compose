@@ -1,0 +1,28 @@
+
+version: '2'
+
+services:
+  db:
+    container_name: jeedom_mysql
+    restart: always
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: 'jeedom'
+      MYSQL_USER: 'jeedom'
+      MYSQL_PASS: 'jeedom'
+    volumes:
+      - ./mysql:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  jeedom:
+    container_name: jeedom_php
+    restart: always
+    image: jeedom/jeedom
+    volumes:
+      - ./www:/var/www
+    ports:
+      - "8022:22"
+      - "8080:80"
+    depends_on:
+      - db
