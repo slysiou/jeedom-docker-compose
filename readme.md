@@ -22,7 +22,9 @@ You are up and running in 1 step:
 $ docker-compose up  -d 
 ```
 Open in browser: http://localhost:8080/
+
 Database hostname is "db"
+
 User and password are admin/admin
 
 Enjoy!
