@@ -13,7 +13,7 @@ Also, if you're developing on Mac or Windows – yeah, maybe that's the case –
 
 ## Warning
 
-Lot of plugin use network broadcast and can not work in a docker container. It is recommended to run Jeedom in VM or physical machine like RPI.
+Lot of plugin use network broadcast and make it difficult to work properly in a docker container. 
 
 ## Usage
 
