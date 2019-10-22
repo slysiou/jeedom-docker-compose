@@ -13,18 +13,27 @@ Also, if you're developing on Mac or Windows – yeah, maybe that's the case –
 
 ## Warning
 
-Lot of plugin use network broadcast and make it difficult to work properly in a docker container. 
+Lot of plugin use network broadcast and make it difficult to work properly in a containerized environment. 
 
 ## Usage
 
 You are up and running in 1 step:
+
 ```sh
-$ docker-compose up  -d 
+$ docker-compose up  -d
 ```
+
 Open in browser: http://localhost:8080/
 
-Database hostname is "db"
+## Configuration
 
-User and password are admin/admin
+```ÌNI
+DB Hostname: db
+DB Port : 3306
+DB Name: Jeedom
+DB Username: Jeedom
+DB Password: Jeedom
+```
+You can now log into Jeedom, default user and password are admin/admin.
 
 Enjoy!
