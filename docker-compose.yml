@@ -5,13 +5,15 @@ services:
   db:
     container_name: jeedom_mysql
     restart: always
-    image: mysql:latest
+    image: mariadb:10
     environment:
-      MYSQL_ROOT_PASSWORD: 'jeedom'
+      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
       MYSQL_USER: 'jeedom'
-      MYSQL_PASS: 'jeedom'
+      MYSQL_PASSWORD: 'jeedom'
+      MYSQL_DATABASE: 'jeedom'
     volumes:
-      - ./mysql:/var/lib/mysql
+      - ./volumes/db:/var/lib/mysql
+      - ./conf/my.cnf:/etc/mysql/my.cnf
     ports:
       - "3306:3306"
 
@@ -20,7 +22,7 @@ services:
     restart: always
     image: jeedom/jeedom
     volumes:
-      - ./www:/var/www
+      - ./volumes/www:/var/www
     ports:
       - "8022:22"
       - "8080:80"
