@@ -4,8 +4,7 @@ version: '2'
 services:
   db:
     container_name: jeedom_mysql
-    restart: always
-    image: mysql:latest
+    image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: 'jeedom'
       MYSQL_USER: 'jeedom'
@@ -17,8 +16,7 @@ services:
 
   jeedom:
     container_name: jeedom_php
-    restart: always
-    image: jeedom/jeedom
+    image: jeedom/jeedom:master
     volumes:
       - ./www:/var/www
     ports:
